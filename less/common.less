@@ -1,0 +1,109 @@
+@import "base";
+/*字体px处理*/
+.font_dpr(@font-size: 16px) {
+  font-size: @font-size;
+
+  [data-dpr="2"] & {
+    font-size: @font-size * 2;
+  }
+  [data-dpr="3"] & {
+    font-size: @font-size * 3;
+  }
+}
+
+// 基准值
+@base: 75;
+
+// 慢慢买主题色
+@mBuyColor: #ff841d;
+
+//整体大盒子设置
+.mmb_container {
+  width: 100%;
+  min-width: 320px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+//宽度相关设置
+.w33 {
+  width: 33.3333%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+/*公共样式*/
+
+/*.mmb_container{
+  background-color: #fff;
+}*/
+
+//头部
+.header {
+  width: 100%;
+  height: 100rem/@base;
+  background-color: @mBuyColor;
+  .logo {
+    padding: 22rem/@base 20rem/@base;
+    a {
+      display: inline-block;
+      cursor: pointer;
+    }
+    img {
+      display: inline-block;
+      width: 371rem/@base;
+      height: 50rem/@base;
+    }
+  }
+  .download {
+    padding: 13rem/@base 15rem/@base;
+    img {
+      display: inline-block;
+      width: 68rem/@base;
+      height: 68rem/@base;
+    }
+  }
+
+}
+
+//尾部
+.footer {
+  margin-top: 30rem/@base;
+  .footer_top {
+    border-top: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
+    a {
+      float: left;
+      width: 30%;
+      text-align: center;
+      line-height: 62rem/@base;
+      .font_dpr(14px);
+      img{
+        width: 30rem/@base;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    a:nth-child(2) {
+      border-left: 1px solid #c4c4c4;
+      border-right: 1px solid #c4c4c4;
+    }
+    a:nth-last-of-type(1) {
+      width: 40%;
+    }
+  }
+  .footer_bottom{
+      padding: 35rem/@base;
+      text-align: center;
+    .font_dpr(14px);
+      p:first-child a:first-child {
+        color: red;
+      }
+      p:first-child a:nth-child(2) {
+        color: black;
+      }
+  }
+}
+

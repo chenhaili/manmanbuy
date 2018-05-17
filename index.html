@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>首页_慢慢买</title>
+  <script src="lib/flexible.js"></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!-- 整体结构容器 -->
+<div class="mmb_container">
+  <!-- header -->
+  <div class="header clearfix">
+    <div class="logo fl">
+      <a href="index.html">
+        <img src="images/header_logo.png" alt="">
+      </a>
+    </div>
+    <div class="download fr"><img src="images/header_app.png" alt=""></div>
+  </div>
+  <!-- search -->
+  <div class="search clearfix">
+    <input type="search" name="" id="" class="search_cont" placeholder="请输入您要搜索的商品信息">
+    <button class="search_but">搜索</button>
+  </div>
+  <!-- nav -->
+  <div class="nav">
+    <ul class="navList clearfix">
+      <!--  导航坑  -->
+    
+    </ul>
+  </div>
+  <!-- product -->
+  <div class="product clearfix">
+    <div class="idxProTit">
+      <a href="javascript:;" class="more fr">
+        <img src="images/more.png" alt="">
+      </a>
+      <p>超值折扣推荐</p>
+    </div>
+    <!-- 商品列表 -->
+    <ul class="idxProList">
+      <!--  商品列表坑  -->
+      <!--<li class="clearfix">
+        <a href="javascript:;">
+          <div class="pic"><img src="images/product.jpg"></div>
+          <div class="info clearfix">
+            <p class="info-title">移动端凑单品：海天 鲜味 生抽 1.28L<span>10.9元</span></p>
+            <div class="other clearfix">
+              <span class="app-time">京东商城|10-25 14:10</span>
+              <span class="comment"><i class="icon-comment"></i>有1人评论</span>
+            </div>
+          </div>
+        </a>
+      </li>-->
+    </ul>
+  </div>
+  <!-- getMore -->
+  <div class="getMore">
+    <a class="mmore-bt" href="moneyctrl.html">更多优惠信息 &gt;&gt;</a>
+  </div>
+  <!-- 品牌排行 -->
+  <div class="product clearfix">
+    <div class="idxProTit">
+      <a href="javascript:;" class="more fr">
+        <img src="images/more.png" alt="">
+      </a>
+      <p>品牌排行</p>
+    </div>
+  </div>
+  <!-- footer -->
+  <div class="footer">
+    <div class="footer_top clearfix">
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;"  class="toTop"><img src="images/top.jpg" alt="回到顶部">回到顶部</a>
+    </div>
+    <div class="footer_bottom">
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+        <a href="javascript:;">慢慢买手机版</a>
+        <a href="javascript:;">--掌上比价平台</a>
+      </p>
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+      </p>
+    </div>
+  </div>
+  
+  <!-- 导航渲染 -->
+  <script type="text/html" id="navTpl">
+    {{ each result v i }}
+    <li class="item {{ v.indexmenuId > 7 ? 'hide' : ''}}" id="{{ v._id }}" indexmenuid="{{ v.indexmenuId }}">
+      <a href="{{ v.titlehref }}" title="{{ v.name }}">
+        {{# v.img }}
+        <p>{{ v.name }}</p>
+      </a>
+    </li>
+    {{ /each }}
+  </script>
+  
+  
+  <!-- 商品列表渲染 -->
+  <script type="text/html" id="proTpl">
+    {{ each result v i }}
+    <li class="clearfix">
+      <a href="moneyproduct.html?productid={{ v.productId }}">
+        <div class="pic">{{# v.productImg2 }}</div>
+        <div class="info clearfix">
+          <p class="info-title">{{ v.productName }}<span>{{ v.productPinkage }}</span></p>
+          <div class="other clearfix">
+            <span class="app-time">京东商城|{{ v.productTime }}</span>
+            <span class="comment"><i class="icon-comment"></i>{{ v.productComCount }}</span>
+          </div>
+        </div>
+      </a>
+    </li>
+    {{ /each }}
+  </script>
+  
+  
+  <script src="lib/jquery-1.12.4.js"></script>
+  <script src="lib/artTemplate/template-web.js"></script>
+  <script src="js/mmbApi.js"></script>
+  <script src="js/index.js"></script>
+</div>
+</body>
+</html>

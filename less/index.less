@@ -1,10 +1,11 @@
 @import "base";
 @import "common";
 
-/*首页样式*/
+/*首页样式 index*/
 
 //搜索样式
 .search {
+  width: 100%;
   padding: 20rem/@base;
   position: relative;
   overflow: hidden;
@@ -36,7 +37,7 @@
 //导航样式
 .nav {
   .navList {
-    margin-top: 40rem/@base;
+    margin-top: 30rem/@base;
   }
   .navList .item {
     width: 25%;
@@ -150,4 +151,52 @@
     background-image: linear-gradient(#ffffff, #f4f4f4);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4), to(#ececec));
   }
+}
+
+/*分类页 category*/
+.category {
+  border-top: 1px solid #ccc;
+  .category_box {
+    background-color: #f1f1f1;
+    padding: 10rem/@base;
+    li {
+      border-bottom: 1px solid #ccc;
+      .title {
+        width: 100%;
+        height: 80rem/@base;
+        padding: 20rem/@base 30rem/@base;
+        a {
+          .font_dpr(16px);
+          color: #000;
+          font-weight: 700;
+        }
+        img {
+          width: 48rem/@base;
+          height: 48rem/@base;
+          float: right;
+        }
+      }
+    }
+  }
+
+  .info {
+    background-color: #fff;
+    border-top: 1px solid #bbb;
+    li {
+      float: left;
+      text-align: center;
+      background-color: #fbfbfb;
+      a {
+        width: 100%;
+        height: 100%;
+        padding: 28rem/@base;
+        display: inline-block;
+        .font_dpr(14px);
+        color: #000;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+  }
+
 }

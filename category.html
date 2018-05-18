@@ -2,9 +2,82 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>比价搜索_慢慢买</title>
+  <script src="lib/flexible.js"></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+<!-- 整体结构容器 -->
+<div class="mmb_container">
+  <!-- header -->
+  <div class="header clearfix">
+    <div class="logo fl">
+      <a href="index.html">
+        <img src="images/header_logo.png" alt="">
+      </a>
+    </div>
+    <div class="download fr"><img src="images/header_app.png" alt=""></div>
+  </div>
+  <!-- search -->
+  <div class="search clearfix">
+    <input type="search" name="" id="" class="search_cont" placeholder="请输入您要搜索的商品信息">
+    <button class="search_but">搜索</button>
+  </div>
+  <!-- 商品分类 -->
+  <div class="category">
+    <ul class="clearfix category_box">
+      <!-- 分类渲染模板 -->
+    </ul>
+  </div>
+  <!-- footer -->
+  <div class="footer">
+    <div class="footer_top clearfix">
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;"  class="toTop"><img src="images/top.jpg" alt="回到顶部">回到顶部</a>
+    </div>
+    <div class="footer_bottom">
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+        <a href="javascript:;">慢慢买手机版</a>
+        <a href="javascript:;">--掌上比价平台</a>
+      </p>
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+      </p>
+    </div>
+  </div>
+  
+  <!-- 一级分类渲染 -->
+  <script type="text/html" id="categoryTpl">
+    {{ each result v i }}
+    <li data-id="{{ v.titleId }}">
+      <div class="title"><a href="javascript:;"><img src="images/arrow.png" alt="">{{ v.title }}</a></div>
+      <div class="info info_box" style="display: none">
+      </div>
+    </li>
+    {{ /each }}
+  </script>
+  
+  <!-- 二级分类渲染 -->
+  <script type="text/html" id="scdcatTpl">
+    <ul class="clearfix">
+      {{ each result v i }}
+      <li class="w33" categoryid="{{ v.productId }}" titleid="{{ v.titleId }}">
+        <a href="productlist.html?categoryid={{ v.productId }}">{{ v.category }}</a>
+      </li>
+      {{ /each }}
+    </ul>
+  </script>
 
+  
+  <script src="lib/jquery-1.12.4.js"></script>
+  <script src="lib/artTemplate/template-web.js"></script>
+  <script src="js/mmbApi.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/category.js"></script>
+</div>
 </body>
 </html>

@@ -4,7 +4,7 @@
 ;(function (w) {
   function Api(origin, pathname) {
     /* 自己本地IP加上项目端口号 */
-    this.base = 'http://192.168.45.34:9999';
+    this.base = 'http://192.168.45.50:9999';
     /*首页接口地址管理*/
     this.getindexmenu = this.base + '/api/getindexmenu';
     this.getmoneyctrl = this.base + '/api/getmoneyctrl';
